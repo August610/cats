@@ -1,0 +1,130 @@
+.container {
+    display: flex;
+    padding: 30px calc(50% - 500px);
+}
+
+header {
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 5px 0 #0006;
+}
+
+header {
+    display: block;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+html {
+    font-size: 20px;
+}
+
+main.container {
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.logo-img {
+    height: 50px;
+}
+
+.logo-text {
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.rate img {
+    height: 10px;
+}
+
+.card {
+    width: 300px;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 0 #0006;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0);
+    transition-duration: 2s;
+  }
+
+.card-img {
+    height: 150px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: .7;
+}
+
+.card p {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.rate {
+    display: flex;
+}
+
+p, h1, h2, h3 {
+    margin: 0;
+}
+
+footer {
+    box-shadow: 0 0 5px 0 #0006;
+    display: block;
+}
+
+.info-wrapper.active {
+    width: 600px;
+    height: 400px;
+    position: fixed; 
+    left: calc(50vw - 300px);
+    top: calc(50vh - 250px);
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 #0004, 0 0 15px #0004;
+    padding: 20px;
+    display: block;
+    background-color: #fff;
+}
+.info-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0008;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.info-block.active {
+    display: flex;
+}
+.popup-close {
+    /* position: fixed; */
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-image: url(img/close.png);
+    background-position: center 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin-left: 500px;
+}
