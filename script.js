@@ -19,7 +19,6 @@ function popupClose() {
     block.classList.remove('active'); 
     popup.classList.remove('active');
 }
-
 document.addEventListener('click', (e) => { 
     if(e.target === block) { 
         popupClose();
