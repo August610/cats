@@ -1,6 +1,17 @@
-.container {
+@font-face {
+    font-family: "Comic Sans MS";
+    src: url("assets/fonts/Comic.ttf") format("TrueType");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container-card {
     display: flex;
     padding: 30px calc(50% - 500px);
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 header {
@@ -16,17 +27,12 @@ header {
 body {
     font-family: sans-serif;
     margin: 0;
+    display: block;
 }
 
 html {
     font-size: 20px;
-}
-
-main.container {
-    flex-wrap: wrap;
-    gap: 50px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    display: block;
 }
 
 .logo-img {
@@ -37,11 +43,22 @@ main.container {
     font-family: "Comic Sans MS", sans-serif;
 }
 
-.rate img {
-    height: 10px;
+.rate {
+    height: 15px;
+}
+.container {
+    display: flex;
+    padding: 30px calc(50% - 500px);
 }
 
-.card {
+.container-card {
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.card__item {
     width: 300px;
     padding: 30px;
     box-sizing: border-box;
@@ -53,9 +70,9 @@ main.container {
     flex-direction: column;
     gap: 30px;
     text-align: center;
-}
+    }
 
-.card:hover {
+.card__item:hover {
     transform: scale(1.2);
     box-shadow: 0 0 10px 0 rgb(0, 0, 0);
     transition-duration: 2s;
@@ -70,10 +87,11 @@ main.container {
     opacity: .7;
 }
 
-.card p {
+.card__item p {
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 111px;
+    justify-content: center;
 }
 .rate {
     display: flex;
@@ -85,22 +103,21 @@ p, h1, h2, h3 {
 
 footer {
     box-shadow: 0 0 5px 0 #0006;
-    display: block;
+    display: flex;
 }
 
 .info-wrapper.active {
-    width: 600px;
-    height: 400px;
-    position: fixed; 
-    left: calc(50vw - 300px);
-    top: calc(50vh - 250px);
-    box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 0 0 5px 0 #0004, 0 0 15px #0004;
-    padding: 20px;
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    gap: 0 50px;
     background-color: #fff;
+    padding: 30px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: relative;
+    max-width: 1000px;
 }
+
 .info-block {
     position: fixed;
     top: 0;
@@ -115,8 +132,33 @@ footer {
 .info-block.active {
     display: flex;
 }
+
+.info-img {
+    height: 30px;
+    width: 20px;
+    width: 100%;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    /* opacity: .7; */
+} 
+
+ .info-img {
+    width: 100%;
+    height: 100%;
+ }
+
+.information h2 {
+    font-family: "Comic Sans MS", sans-serif;
+    margin-bottom: 30px;
+}
+.information h3 {
+    margin-bottom: 30px;
+}
+
 .popup-close {
-    /* position: fixed; */
+    position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
@@ -126,5 +168,4 @@ footer {
     background-repeat: no-repeat;
     width: 50px;
     height: 50px;
-    margin-left: 500px;
 }
