@@ -78,12 +78,18 @@ function declOfNum(n, text_forms) {
     return text_forms[2];
 }
 
-function popupInfoCats(name, age, description, img) {
-    popup.querySelector(".info-img").style.backgroundImage = img;
-    popup.querySelector("h2").innerText = name;
-    popup.querySelector("h3").innerText = age + " " + declOfNum(age, ['год', 'года', 'лет']);
-    popup.querySelector("p").textContent = description;
-    addPopup(popup);
+function popupInfoCats(id) {
+    api.getCatById(id)
+        .then(data => {
+            if (data.message === "ok") {
+                console.log(data.data.name);
+                popup.querySelector(".info-img").style.backgroundImage = `url(${data.data.img_link})`;
+                popup.querySelector("h2").innerText = data.data.name;
+                popup.querySelector("h3").innerText = data.data.age + " " + declOfNum(data.data.age, ['год', 'года', 'лет']);
+                popup.querySelector("p").textContent = data.data.description;
+                addPopup(popup);
+            }
+        })
 }
 
 function addPopup(arg1) {

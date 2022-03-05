@@ -46,7 +46,7 @@ class Cat {
 
 
         this.cat.querySelector(".card-img").addEventListener("click", e => {
-            popupInfoCats(name, age, description, img);
+            popupInfoCats(id);
         });
 
         const btnCats = this.cat.querySelector(".buttonCats");
