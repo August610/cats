@@ -33,6 +33,22 @@ class Api {
             .then(onError)
     }
 
+    updateCat(value, bodyData) {
+        return fetch(`${this._url}/update/${value}`, {
+                method: "PUT",
+                headers: this._headers,
+                body: JSON.stringify(bodyData)
+            })
+            .then(onError)
+    }
+
+    deleteCat(value) {
+        return fetch(`${this._url}/delete/${value}`, {
+                method: "DELETE",
+                headers: this._headers,
+            })
+            .then(onError)
+    }
 }
 
 const api = new Api({

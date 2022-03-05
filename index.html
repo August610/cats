@@ -5,6 +5,8 @@
     <title>Котики</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <!-- <script src="./js/script.js" defer></script> -->
 </head>
 
 <body>
@@ -12,9 +14,22 @@
         <img class="logo-img" src="img/cat-fill.svg" alt="Бабуленькины котики">
         <span class="logo-text">Бабуленькины котики</span>
     </header>
+    <div class="auth">
+        <section class="todos">
+            <form name="auth-form" class="auth-form">
+                <input type="text" name="todo" class="auth-form__input" placeholder="Ваше имя">
+                <button type="submit" class="auth-form__submit-btn">Авторизация</button>
+            </form>
+        </section>
+    </div>
+    <div class="buttonsInfoCats">
+        <button type="button" class="reload-data">Обновить данные о котах</button>
+        <button type="button" class="button-add-cat">Добавить кота</button>
+        <input class="inputShowById" type="text" />
+        <button class="buttonShowById">Найти котика по номеру</button>
+    </div>
 
     <main class="container-card"></main>
-
     <div class="info-block">
         <div class="info-wrapper">
             <div class="info-img"></div>
@@ -24,12 +39,52 @@
                 <p></p>
             </div>
         </div>
+    </div>
 
+    <div class="root-popup">
+        <div class="popup popup_type_cats-info">
+            <div class="popup__container">
+                <button type="button" class="popup__close">x</button>
+                <img src="" alt="" class="popup__image">
+                <p class="popup__name"></p>
+                <p class="popup__text"></p>
+            </div>
+        </div>
+        <div class="popup popup_type_cats-add">
+            <div class="popup__container">
+                <!-- <button type="button" class="popup__close">x</button> -->
+                <form class="popup__form">
+                    <input type="text" placeholder="id" name="id" id="id" class="id__cat">
+                    <input type="text" placeholder="Имя" name="name" id="name">
+                    <input type="text" placeholder="Изображение" name="img_link" id="img_link">
+                    <input type="text" placeholder="Описание" name="description" id="description">
+                    <input type="text" placeholder="Рейтинг" name="rate" id="rate">
+                    <input type="text" placeholder="Возраст" name="age" id="age">
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+        <div class="popup popup_type_cats-edit">
+            <div class="popup__container">
+                <!-- <button type="button" class="popup__close">x</button> -->
+                <form class="popup__form">
+                    <input type="text" class="popup__form-input" placeholder="id" name="id">
+                    <input type="text" class="popup__form-input" placeholder="Имя" name="name">
+                    <input type="text" class="popup__form-input" placeholder="Изображение" name="img_link">
+                    <input type="text" class="popup__form-input" placeholder="Описание" name="description">
+                    <input type="text" class="popup__form-input" placeholder="Рейтинг" name="rate">
+                    <input type="text" class="popup__form-input" placeholder="Возраст" name="age">
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <footer class="container">©2022 All rights reserved</footer>
 
-    <script src="js/data.js"></script>
+    <!-- <script src="js/data.js"></script> -->
+
+    <script src="js/Api.js"></script>
     <script src="js/Cat.js"></script>
     <script src="js/script.js"></script>
 </body>
